@@ -1,0 +1,1 @@
+export default function SectionHeading({label,title,text,className=''}){return <div className={`max-w-3xl ${className}`}>{label&&<span className="eyebrow">{label}</span>}<h2 className="title">{title}</h2>{text&&<p className="copy mt-4">{text}</p>}</div>}

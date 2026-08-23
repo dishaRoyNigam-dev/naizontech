@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {*{@apply box-border}html{@apply scroll-smooth overscroll-y-none}body{@apply m-0 overflow-x-hidden overscroll-y-none bg-[#f8f8f5] text-[#172033] antialiased;font-family:'Inter',sans-serif}h1,h2,h3,h4{font-family:'Manrope',sans-serif}button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}::selection{@apply bg-blue-200 text-slate-950}}
+@layer components{.shell{@apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10 xl:px-12}.section{@apply py-16 sm:py-20 lg:py-24 xl:py-28}.eyebrow{@apply mb-4 block text-xs font-semibold uppercase tracking-[.16em] text-blue-700}.title{@apply text-3xl font-semibold leading-tight tracking-[-.035em] text-[#111827] sm:text-4xl xl:text-5xl}.copy{@apply text-base leading-7 text-slate-600 lg:text-lg lg:leading-8}.btn-primary{@apply inline-flex min-h-11 items-center justify-center gap-2 bg-blue-700 px-5 py-3 text-sm font-semibold text-white transition duration-200 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2}.btn-secondary{@apply inline-flex min-h-11 items-center justify-center gap-2 border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition duration-200 hover:border-slate-500 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2}.text-link{@apply inline-flex items-center gap-1 border-b border-transparent pb-0.5 text-sm font-semibold text-blue-700 transition duration-200 hover:border-blue-700}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+html,body,#root{width:100%;margin:0;padding:0}
+@media(min-width:1024px){#services article{column-gap:3rem;padding-top:3rem;padding-bottom:3rem}#services article h3{font-size:1.5rem;line-height:2rem}#services article p{font-size:1rem}}
+#services{padding-top:4rem}
+[id]:not(#home){scroll-margin-top:72px}
+@media(min-width:1024px){#services{padding-top:3rem}}
