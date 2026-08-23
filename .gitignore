@@ -1,0 +1,8 @@
+# Local environment files may contain private Supabase credentials.
+.env
+.env.*
+!.env.example
+
+# Local tooling and operating-system files.
+.DS_Store
+*.log
