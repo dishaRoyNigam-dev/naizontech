@@ -8,7 +8,7 @@ export default function WhatsAppButton() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with Naizon Digital on WhatsApp"
+      aria-label="Chat with NAIZON about digital services on WhatsApp"
       className="fixed bottom-5 right-4 z-50 inline-flex min-h-14 items-center gap-2 rounded-full bg-[#25D366] px-4 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#1ebe5d] focus:outline-none focus:ring-2 focus:ring-[#128C7E] focus:ring-offset-2 sm:bottom-6 sm:right-6"
     >
       <MessageCircle size={24} aria-hidden="true" />

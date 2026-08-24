@@ -2,7 +2,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 
 const pages = {
-  privacy: { title: 'Privacy Policy', intro: 'This policy explains what information Naizon Digital collects, why we collect it, and the choices available to you.', sections: [
+  privacy: { title: 'Privacy Policy', intro: 'This policy explains what information NAIZON collects, why we collect it, and the choices available to you.', sections: [
     ['Information we collect', ['When you submit an enquiry, we collect your name, email address, phone number, selected service, budget or plan, and the project details you provide.', 'We may also receive basic technical information normally sent by your browser or hosting provider, such as device type, browser type, IP address, and pages visited.']],
     ['How we use information', ['We use your information to review and respond to enquiries, prepare estimates or proposals, deliver requested services, provide support, maintain security, and meet legal or accounting obligations.', 'We do not sell your personal information.']],
     ['Storage and service providers', ['Website enquiries are stored using Supabase. We may use trusted hosting, communication, analytics, payment, and project-management providers where necessary to operate our services.']],
@@ -12,12 +12,12 @@ const pages = {
     ['Changes to this policy', ['We may update this policy as our services or legal obligations change. The effective date identifies the latest version.']],
     ['Contact', ['For privacy questions or requests, submit a message through the contact form and clearly label it as a privacy request.']],
   ]},
-  terms: { title: 'Terms of Service', intro: 'These terms apply when you use this website or engage Naizon Digital for website, application, game, design, or related digital services.', sections: [
+  terms: { title: 'Terms of Service', intro: 'These terms apply when you use this website or engage NAIZON for website, application, game, design, or related digital services.', sections: [
     ['Enquiries and proposals', ['Submitting the contact form does not create a service agreement. A project begins only after the scope, price, schedule, deliverables, and payment terms are confirmed in writing. A project-specific proposal takes priority if it conflicts with these terms.']],
     ['Your responsibilities', ['You agree to provide accurate requirements, timely feedback, required access, and content that you have the right to use. Delays in content, approvals, access, or feedback may change the delivery schedule.']],
     ['Pricing and payment', ['Displayed plan prices and features may change before purchase. Custom work is priced according to scope. Invoices must be paid according to the relevant proposal or invoice. Taxes and third-party charges may apply where stated.']],
     ['Scope changes', ['Requests outside the agreed scope—including additional pages, features, integrations, redesigns, or substantial revisions—may require a revised estimate and schedule.']],
-    ['Intellectual property', ['You retain ownership of materials you provide. Unless otherwise agreed, ownership of final custom deliverables transfers after full payment. Naizon Digital retains its pre-existing tools, reusable code, methods, templates, and know-how. Third-party materials remain subject to their own licences.']],
+    ['Intellectual property', ['You retain ownership of materials you provide. Unless otherwise agreed, ownership of final custom deliverables transfers after full payment. NAIZON retains its pre-existing tools, reusable code, methods, templates, and know-how. Third-party materials remain subject to their own licences.']],
     ['Third-party services', ['Domains, hosting, payment processors, app stores, APIs, plugins, and other third-party services are governed by their providers. We are not responsible for changes, outages, suspensions, or charges controlled by those providers.']],
     ['Acceptable use', ['You must not use the website or delivered services unlawfully, infringe another person’s rights, introduce malicious code, attempt unauthorised access, or interfere with service operation.']],
     ['Warranties and liability', ['We will provide services with reasonable care and skill. Except where required by law, services do not carry guarantees of uninterrupted operation, specific commercial results, rankings, revenue, or compatibility with future third-party changes.', 'To the extent permitted by law, neither party is liable for indirect or consequential losses. Aggregate liability relating to a service is limited to the amount paid for that service during the relevant claim period.']],

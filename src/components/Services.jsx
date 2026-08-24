@@ -6,18 +6,21 @@ const services=[
     title:'Website Development',
     description:'Clear, responsive websites that make it easy for customers to understand and contact your business.',
     capabilities:['Business websites','E-commerce','Landing pages','Maintenance'],
+    href:'/website-development',
   },
   {
     number:'02',
     title:'Mobile App Development',
     description:'Practical mobile applications designed around your users, workflows and business requirements.',
     capabilities:['Android','Cross-platform','API integration','Business applications'],
+    href:'/mobile-app-development',
   },
   {
     number:'03',
     title:'Game Development',
     description:'Focused mobile games with considered mechanics, clear interfaces and reliable Android builds.',
     capabilities:['Unity','2D games','Puzzle games','Casual mobile games'],
+    href:'/#contact',
   },
 ]
 
@@ -27,9 +30,9 @@ export default function Services(){
       <div className="grid gap-6 pb-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end lg:gap-16 lg:pb-16">
         <div>
           <span className="mb-4 block text-xs font-semibold uppercase tracking-[.18em] text-[#12834b]">Core services</span>
-          <h2 className="text-[36px] font-semibold leading-tight tracking-[-.035em] text-neutral-950 sm:text-[44px] lg:text-[50px]">What we build</h2>
+          <h2 className="text-[36px] font-semibold leading-tight tracking-[-.035em] text-neutral-950 sm:text-[44px] lg:text-[50px]">Professional Website Design &amp; Development</h2>
         </div>
-        <p className="max-w-[680px] text-lg leading-8 text-neutral-600 lg:justify-self-end">From a simple business website to a complete application, we help turn practical ideas into working digital products.</p>
+        <p className="max-w-[680px] text-lg leading-8 text-neutral-600 lg:justify-self-end">From responsive website design and custom web development services to complete mobile applications, we turn practical ideas into useful digital products.</p>
       </div>
 
       <div className="border-t border-neutral-300">
@@ -45,7 +48,7 @@ export default function Services(){
 
           <div>
             <p className="max-w-[440px] text-[15px] leading-7 text-neutral-600">{service.description}</p>
-            <a href="#contact" className="mt-5 inline-flex items-center gap-2 border-b border-neutral-400 pb-1 text-sm font-semibold text-neutral-900 transition-colors duration-200 hover:border-[#12834b] hover:text-[#12834b]">Learn more <ArrowUpRight size={14}/></a>
+            <a href={service.href} className="mt-5 inline-flex items-center gap-2 border-b border-neutral-400 pb-1 text-sm font-semibold text-neutral-900 transition-colors duration-200 hover:border-[#12834b] hover:text-[#12834b]">Learn more <ArrowUpRight size={14}/></a>
           </div>
 
           <div className="grid content-start grid-cols-1 border-t border-neutral-200 sm:grid-cols-2 xl:border-t-0">

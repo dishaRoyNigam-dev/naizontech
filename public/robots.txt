@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /data
+Disallow: /reset-password
+
+Sitemap: https://naizon.in/sitemap.xml
