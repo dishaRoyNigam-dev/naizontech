@@ -145,9 +145,9 @@ const navigationData = [
             icon: Code2,
           },
           {
-            label: 'Plans & Pricing',
-            href: '/#pricing',
-            description: 'Transparent monthly and yearly development plans.',
+            label: 'News & Insights',
+            href: '/#news-insights',
+            description: 'Explore latest publications, industry research, and tech insights.',
             icon: Layers,
           },
         ],

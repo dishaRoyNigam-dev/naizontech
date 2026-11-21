@@ -3,8 +3,7 @@ import Hero from '../components/Hero'
 import Services from '../components/Services'
 import MosaicInsights from '../components/MosaicInsights'
 import Portfolio from '../components/Portfolio'
-import Pricing from '../components/Pricing'
-import AppGamePricing from '../components/AppGamePricing'
+import NewsAndInsights from '../components/NewsAndInsights'
 import HowItWorks from '../components/HowItWorks'
 import WhyChooseUs from '../components/WhyChooseUs'
 import About from '../components/About'
@@ -41,8 +40,7 @@ export default function HomePage() {
         <Services />
         <Portfolio />
         <MosaicInsights />
-        <Pricing />
-        <AppGamePricing />
+        <NewsAndInsights />
         <HowItWorks />
         <WhyChooseUs />
         <About />
