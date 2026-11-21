@@ -39,8 +39,8 @@ export default function HomePage() {
       <main id="main-content">
         <Hero />
         <Services />
-        <MosaicInsights />
         <Portfolio />
+        <MosaicInsights />
         <Pricing />
         <AppGamePricing />
         <HowItWorks />

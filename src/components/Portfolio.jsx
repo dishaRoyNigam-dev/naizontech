@@ -1,139 +1,151 @@
-import { ArrowUpRight } from 'lucide-react'
+'use client'
 
-const projects = [
+import { useRef, useState, useEffect } from 'react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
+
+const customerStories = [
   {
-    number: '01',
-    name: 'FileWalaTool',
-    category: 'Web application',
+    title: 'Dorman',
     description:
-      'A practical online workspace for resizing, compressing, converting and organising image and PDF files.',
-    technology: 'Responsive web · File utilities',
-    image: '/images/filewalatool.png',
-    imageAlt: 'FileWalaTool web application interface',
-    imageWidth: 1854,
-    imageHeight: 1005,
-    status: 'Live product',
+      'Advances AI-driven product innovation and business resilience',
+    image: '/images/stories/dorman-card.jpg',
+    imageAlt: 'Dorman advances AI-driven product innovation',
+    href: '/#contact',
   },
   {
-    number: '02',
-    name: 'Service Application',
-    category: 'Mobile application',
+    title: 'Versigent',
     description:
-      'A focused mobile workflow for service requests, status updates and customer communication.',
-    technology: 'Android · REST API',
-    image: '/images/Service%20Application.png',
-    imageAlt: 'Service application mobile interface',
-    imageWidth: 941,
-    imageHeight: 1672,
-    imageFit: 'contain',
-    status: 'App preview',
+      'Reflects on the role TCS has played in supporting the company expand',
+    image: '/images/stories/versigent-card.jpg',
+    imageAlt: 'Versigent global manufacturing footprint expansion',
+    href: '/#contact',
   },
   {
-    number: '03',
-    name: '2D Puzzle Game',
-    category: 'Game development',
+    title: 'Tata Chemicals',
     description:
-      'A considered mobile puzzle game concept with clear mechanics and dependable Android builds.',
-    technology: 'Unity · C#',
-    image: '/images/game.png',
-    imageAlt: 'Color Sort mobile puzzle game screen',
-    imageWidth: 292,
-    imageHeight: 599,
-    imageFit: 'contain',
-    status: 'Game preview',
+      'Reimagines plant maintenance with Gen AI-based interactive solution',
+    image: '/images/stories/tata-chem-card.jpg',
+    imageAlt: 'Tata Chemicals reimagines plant maintenance',
+    href: '/#contact',
+  },
+  {
+    title: 'Vodafone Germany',
+    description:
+      'Modernises network management systems',
+    image: '/images/stories/vodafone-card.jpg',
+    imageAlt: 'Vodafone Germany modernises network management systems',
+    href: '/#contact',
+  },
+  {
+    title: 'Coop Sweden',
+    description:
+      'Builds a unified retail platform for smarter ops',
+    image: '/images/stories/coop-card.jpg',
+    imageAlt: 'Coop Sweden unified retail platform for smarter operations',
+    href: '/#contact',
+  },
+  {
+    title: 'Salling Group',
+    description:
+      'Embarks on Enterprise AI journey with TCS and gets future-ready',
+    image: '/images/stories/salling-card.jpg',
+    imageAlt: 'Salling Group enterprise AI journey',
+    href: '/#contact',
   },
 ]
 
-function ProjectArtwork({ project }) {
-  if (project.image) {
-    return (
-      <div
-        className={`relative aspect-[16/10] overflow-hidden border-b border-slate-200 ${
-          project.imageFit === 'contain' ? 'bg-slate-900' : 'bg-slate-100'
-        }`}
-      >
-        <img
-          src={project.image}
-          width={project.imageWidth}
-          height={project.imageHeight}
-          loading="lazy"
-          decoding="async"
-          alt={project.imageAlt}
-          className={`h-full w-full transition-transform duration-200 group-hover:scale-[1.008] ${
-            project.imageFit === 'contain' ? 'object-contain object-center' : 'object-cover object-top'
-          }`}
-        />
-      </div>
-    )
+export default function Portfolio() {
+  const scrollRef = useRef(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
+
+  const updateScrollButtons = () => {
+    if (!scrollRef.current) return
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current
+    setCanScrollLeft(scrollLeft > 10)
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
+  }
+
+  useEffect(() => {
+    updateScrollButtons()
+    window.addEventListener('resize', updateScrollButtons)
+    return () => window.removeEventListener('resize', updateScrollButtons)
+  }, [])
+
+  const scroll = (direction) => {
+    if (!scrollRef.current) return
+    const cardWidth = scrollRef.current.firstElementChild?.offsetWidth || 340
+    const scrollAmount = (cardWidth + 24) * (direction === 'left' ? -1 : 1)
+    scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
   }
 
   return (
-    <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden border-b border-slate-200 bg-[#e9ece8]">
-      <span className="absolute left-6 top-6 text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-        Project visual coming soon
-      </span>
-    </div>
-  )
-}
+    <section id="work" className="relative bg-white py-12 sm:py-16 md:py-20 border-b border-slate-100">
+      <div className="mx-auto w-full max-w-[1360px] px-5 sm:px-8 lg:px-10">
+        
+        {/* Header matching user's reference image: Left Title, Right Navigation Arrows */}
+        <div className="flex items-center justify-between mb-8 sm:mb-9">
+          <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-normal tracking-tight text-slate-900">
+            Customer Stories
+          </h2>
 
-function ProjectCard({ project }) {
-  return (
-    <article className="group flex h-full flex-col overflow-hidden border border-slate-300 bg-white transition-[box-shadow,border-color] duration-150 hover:border-slate-400 hover:shadow-[0_8px_20px_rgba(15,23,42,0.05)]">
-      <ProjectArtwork project={project} />
-
-      <div className="flex flex-1 flex-col p-6 sm:p-7">
-        <div className="flex items-center justify-between gap-4 text-[11px] font-semibold uppercase tracking-[0.16em]">
-          <span className="text-[#11864b]">{project.number}</span>
-          <span className="text-right text-slate-500">{project.status}</span>
-        </div>
-
-        <p className="mt-8 text-sm font-medium text-slate-500">{project.category}</p>
-        <h3 className="mt-2 text-2xl font-semibold tracking-[-0.025em] text-slate-950 sm:text-[28px]">
-          {project.name}
-        </h3>
-        <p className="mt-4 text-base leading-7 text-slate-600">{project.description}</p>
-
-        <div className="mt-auto pt-8">
-          <div className="flex items-center justify-between gap-5 border-t border-slate-200 pt-5">
-            <span className="text-sm font-medium text-slate-700">{project.technology}</span>
-            <a
-              href="#contact"
-              aria-label={`Discuss a project similar to ${project.name}`}
-              className="flex h-11 w-11 shrink-0 items-center justify-center bg-slate-950 text-white transition-colors duration-200 hover:bg-[#11864b]"
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => scroll('left')}
+              disabled={!canScrollLeft}
+              aria-label="Previous customer story"
+              className="p-1.5 text-slate-300 hover:text-slate-900 transition-colors disabled:opacity-25 disabled:cursor-not-allowed"
             >
-              <ArrowUpRight size={18} aria-hidden="true" />
-            </a>
+              <ArrowLeft size={22} strokeWidth={1.8} />
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              disabled={!canScrollRight}
+              aria-label="Next customer story"
+              className="p-1.5 text-slate-900 hover:text-slate-600 transition-colors disabled:opacity-25 disabled:cursor-not-allowed"
+            >
+              <ArrowRight size={22} strokeWidth={1.8} />
+            </button>
           </div>
         </div>
-      </div>
-    </article>
-  )
-}
 
-export default function Portfolio() {
-  return (
-    <section id="work" className="scroll-mt-24 bg-[#f5f5f1] py-20 sm:py-24 lg:py-28">
-      <div className="mx-auto w-full max-w-[1320px] px-5 sm:px-6 lg:px-8 xl:px-10">
-        <header className="grid gap-6 border-b border-slate-300 pb-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#11864b]">
-              Selected work
-            </p>
-            <h2 className="max-w-xl text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl lg:text-[56px] lg:leading-[1.05]">
-              Products built around real needs.
-            </h2>
-          </div>
-          <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8 lg:justify-self-end">
-            We design useful digital products with clear interfaces and dependable development. Real product
-            screenshots are used where available; early-stage work is clearly labelled.
-          </p>
-        </header>
+        {/* Horizontal Carousel of Tall Portrait Visual Cards */}
+        <div
+          ref={scrollRef}
+          onScroll={updateScrollButtons}
+          className="flex gap-5 sm:gap-6 overflow-x-auto scroll-smooth pb-4 pt-1 snap-x snap-mandatory"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {customerStories.map((story, idx) => (
+            <a
+              key={idx}
+              href={story.href}
+              className="group relative flex-shrink-0 w-[280px] sm:w-[320px] md:w-[350px] lg:w-[370px] h-[450px] sm:h-[480px] lg:h-[500px] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 snap-start bg-slate-900"
+            >
+              {/* Full-bleed portrait photography */}
+              <img
+                src={story.image}
+                alt={story.imageAlt}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+              />
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:mt-14 lg:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
+              {/* Bottom dark gradient overlay matching reference screenshot */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 via-55% to-transparent" />
+
+              {/* Bottom text block matching image content */}
+              <div className="relative z-10 flex h-full flex-col justify-end p-6 sm:p-7">
+                <h3 className="text-xl sm:text-2xl lg:text-[25px] font-medium tracking-tight text-white">
+                  {story.title}
+                </h3>
+                <p className="mt-2 text-[13.5px] sm:text-[14px] leading-relaxed text-neutral-200 line-clamp-3">
+                  {story.description}
+                </p>
+              </div>
+            </a>
           ))}
         </div>
+
       </div>
     </section>
   )
