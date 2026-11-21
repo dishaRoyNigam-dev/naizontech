@@ -100,11 +100,11 @@ const mosaicItems = [
   },
   {
     type: 'image',
-    image: '/images/filewalatool.png',
-    alt: 'FileWalaTool live client utility web platform developed by NAIZON',
-    tag: 'LIVE PRODUCT',
-    title: 'FileWalaTool Workspace Platform',
-    href: '/#portfolio',
+    image: '/images/mosaic-utility-app.png',
+    alt: 'High-Performance Utility Applications and Web Tools engineered by NAIZON',
+    tag: 'UTILITY APPS',
+    title: 'Utility Applications',
+    href: '/website-development',
   },
   {
     type: 'card',
