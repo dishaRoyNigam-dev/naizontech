@@ -1,6 +1,9 @@
+'use client'
+
 import Navbar from './Navbar'
 import Footer from './Footer'
-import SEO, { breadcrumbSchema } from './SEO'
+import SEO from './SEO'
+import { breadcrumbSchema } from '../data/schemas'
 
 export default function ResourcePage({resource,path}){
   const articleSchema={'@context':'https://schema.org','@type':'Article',headline:resource.h1,description:resource.description,mainEntityOfPage:`https://naizon.in${path}`,author:{'@id':'https://naizon.in/#organization'},publisher:{'@id':'https://naizon.in/#organization'},inLanguage:'en-IN'}

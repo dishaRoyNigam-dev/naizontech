@@ -1,68 +1,82 @@
-import {ArrowUpRight} from 'lucide-react'
+'use client'
 
-const services=[
+import { ArrowRight } from 'lucide-react'
+
+const serviceCards = [
   {
-    number:'01',
-    title:'Website Development',
-    description:'Clear, responsive websites that make it easy for customers to understand and contact your business.',
-    capabilities:['Business websites','E-commerce','Landing pages','Maintenance'],
-    href:'/website-development',
+    title: 'Web Development',
+    description: 'Build responsive business websites.\nDrive customer conversions.',
+    image: '/images/work-web.png',
+    imageAlt: 'NAIZON Web Development and Cloud Platforms',
+    href: '/website-development',
   },
   {
-    number:'02',
-    title:'Mobile App Development',
-    description:'Practical mobile applications designed around your users, workflows and business requirements.',
-    capabilities:['Android','Cross-platform','API integration','Business applications'],
-    href:'/mobile-app-development',
+    title: 'Mobile Applications',
+    description: 'Experience native iOS & Android apps.\nTransform your business workflow.',
+    image: '/images/work-mobile.png',
+    imageAlt: 'NAIZON Native Mobile Application Development',
+    href: '/mobile-app-development',
   },
   {
-    number:'03',
-    title:'Game Development',
-    description:'Focused mobile games with considered mechanics, clear interfaces and reliable Android builds.',
-    capabilities:['Unity','2D games','Puzzle games','Casual mobile games'],
-    href:'/#contact',
+    title: 'Products and Platforms',
+    description: 'Explore our interactive games & tools.\nAccelerate digital performance.',
+    image: '/images/work-game.png',
+    imageAlt: 'NAIZON Interactive Games and WebGL Platforms',
+    href: '/#contact',
   },
 ]
 
-export default function Services(){
-  return <section id="services" className="bg-white">
-    <div className="mx-auto w-full max-w-[1320px] px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24 xl:px-10">
-      <div className="grid gap-6 pb-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end lg:gap-16 lg:pb-16">
-        <div>
-          <span className="mb-4 block text-xs font-semibold uppercase tracking-[.18em] text-[#12834b]">Core services</span>
-          <h2 className="text-[36px] font-semibold leading-tight tracking-[-.035em] text-neutral-950 sm:text-[44px] lg:text-[50px]">Professional Website Design &amp; Development</h2>
+export default function Services() {
+  return (
+    <section
+      id="services"
+      className="relative bg-black text-white px-5 py-12 sm:py-16 md:py-20"
+    >
+      <div className="mx-auto w-full max-w-[1320px]">
+        {/* Clean, uncluttered single heading matching user's reference image */}
+        <h2 className="mb-8 text-2xl font-normal tracking-tight text-white sm:text-3xl lg:text-[32px]">
+          Cutting edge solutions to power up your business
+        </h2>
+
+        {/* 3-Column Card Grid (Exact Match to User's Uploaded Wipro Screenshot) */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {serviceCards.map((card, idx) => (
+            <a
+              key={idx}
+              href={card.href}
+              className="group flex flex-col overflow-hidden bg-[#23272e] transition-transform duration-200 hover:-translate-y-1 shadow-lg"
+            >
+              {/* Top Half: Full-bleed Visual Image */}
+              <div className="relative h-[200px] sm:h-[210px] w-full overflow-hidden bg-[#0c1018]">
+                <img
+                  src={card.image}
+                  alt={card.imageAlt}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Bottom Half: Solid Charcoal Gray Content Block */}
+              <div className="flex flex-col justify-between p-6 sm:p-7 min-h-[140px]">
+                <h3 className="text-xl sm:text-[22px] font-medium tracking-tight text-white">
+                  {card.title}
+                </h3>
+
+                <div className="mt-4 flex items-end justify-between gap-4">
+                  <p className="whitespace-pre-line text-[13.5px] leading-relaxed text-[#c4c8d0]">
+                    {card.description}
+                  </p>
+
+                  {/* Circular Blue Arrow Button (Exact Match to Reference Image) */}
+                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#4376b5] text-white shadow-sm transition-all duration-200 group-hover:bg-[#32629e] group-hover:scale-105">
+                    <ArrowRight size={17} strokeWidth={2.4} />
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
         </div>
-        <p className="max-w-[680px] text-lg leading-8 text-neutral-600 lg:justify-self-end">From responsive website design and custom web development services to complete mobile applications, we turn practical ideas into useful digital products.</p>
       </div>
-
-      <div className="border-t border-neutral-300">
-        {services.map(service=><article key={service.number} className="group grid gap-6 border-b border-neutral-300 py-8 transition-colors duration-200 hover:bg-[#f8f8f5] sm:py-10 lg:grid-cols-[56px_1fr] lg:px-4 xl:grid-cols-[56px_280px_1fr_1fr] xl:gap-10 xl:py-12">
-          <div className="flex items-start justify-between xl:block">
-            <span className="text-sm font-semibold tabular-nums text-[#12834b]">{service.number}</span>
-            <ArrowUpRight size={18} className="text-neutral-300 transition duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#12834b] xl:hidden"/>
-          </div>
-
-          <div>
-            <h3 className="text-[23px] font-semibold leading-tight tracking-[-.025em] text-neutral-950 sm:text-[26px]">{service.title}</h3>
-          </div>
-
-          <div>
-            <p className="max-w-[440px] text-[15px] leading-7 text-neutral-600">{service.description}</p>
-            <a href={service.href} className="mt-5 inline-flex items-center gap-2 border-b border-neutral-400 pb-1 text-sm font-semibold text-neutral-900 transition-colors duration-200 hover:border-[#12834b] hover:text-[#12834b]">Learn more <ArrowUpRight size={14}/></a>
-          </div>
-
-          <div className="grid content-start grid-cols-1 border-t border-neutral-200 sm:grid-cols-2 xl:border-t-0">
-            {service.capabilities.map((capability,index)=><div key={capability} className={'flex min-h-12 items-center gap-3 border-b border-neutral-200 py-3 text-sm font-medium text-neutral-700 '+(index%2===1?'sm:pl-5 sm:border-l':'')}>
-              <span className="h-1.5 w-1.5 shrink-0 bg-[#159455]"/>{capability}
-            </div>)}
-          </div>
-        </article>)}
-      </div>
-
-      <div className="mt-8 grid gap-4 border-l-2 border-[#159455] bg-[#f4f5f1] px-5 py-5 sm:grid-cols-[auto_1fr] sm:items-center sm:gap-8 sm:px-6">
-        <span className="text-xs font-semibold uppercase tracking-[.15em] text-neutral-950">Supporting services</span>
-        <p className="text-sm leading-6 text-neutral-600">UI/UX design, logo design, maintenance and ongoing technical support.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  )
 }

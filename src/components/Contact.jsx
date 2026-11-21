@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 
 const initial = { name: '', email: '', phone: '', service: 'Website', budget: 'Basic', details: '' }
@@ -48,9 +50,12 @@ export default function Contact() {
 
     if (error) {
       console.error('Unable to submit enquiry:', error.message)
-      setSubmitError(import.meta.env.DEV
-        ? `Supabase error: ${error.message}`
-        : 'We could not send your enquiry. Please try again in a moment.')
+      setSubmitError(
+        (typeof process !== 'undefined' && process.env?.NODE_ENV !== 'production') ||
+        (typeof import.meta !== 'undefined' && import.meta.env?.DEV)
+          ? `Supabase error: ${error.message}`
+          : 'We could not send your enquiry. Please try again in a moment.'
+      )
       setStatus('error')
       return
     }

@@ -1,8 +1,11 @@
+'use client'
+
 import { ArrowRight, Check } from 'lucide-react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import WhatsAppButton from './WhatsAppButton'
-import SEO, { breadcrumbSchema } from './SEO'
+import SEO from './SEO'
+import { breadcrumbSchema } from '../data/schemas'
 
 export default function ServicePage({ service, path }) {
   const directAnswers={

@@ -1,2 +1,4 @@
+'use client'
+
 const selectService=(service)=>window.dispatchEvent(new CustomEvent('select-service',{detail:service}))
 export default function AppGamePricing(){return <section className="border-y border-slate-300 bg-[#f2f3f1] py-12 sm:py-14"><div className="shell grid gap-7 md:grid-cols-[1fr_auto] md:items-center"><div className="max-w-3xl"><h2 className="text-2xl font-semibold tracking-tight text-slate-950">Planning an app or game?</h2><p className="mt-3 text-base leading-7 text-slate-600">Applications and games vary significantly in scope, so we price them based on the features, screens, backend requirements and complexity of the project.</p></div><div className="flex flex-col gap-3 min-[390px]:flex-row"><a href="#contact" onClick={()=>selectService('Mobile App')} className="btn-primary">Discuss an App</a><a href="#contact" onClick={()=>selectService('Game')} className="btn-secondary">Discuss a Game</a></div></div></section>}

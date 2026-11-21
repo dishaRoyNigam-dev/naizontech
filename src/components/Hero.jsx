@@ -1,34 +1,78 @@
-import {ArrowRight} from 'lucide-react'
+'use client'
 
-export default function Hero(){
-  return <section id="home" className="relative w-full border-b border-neutral-200 bg-[#f8f8f5]">
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-      <img src="/images/hero.jpg" alt="" width="5472" height="3648" loading="eager" fetchPriority="high" className="h-full w-full object-cover object-[58%_center] lg:absolute lg:left-[12%] lg:top-0 lg:w-[110%] lg:max-w-none lg:object-center"/>
-    </div>
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[#f8f8f5]/55 lg:hidden"/>
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-[#f8f8f5] from-[0%] via-[#f8f8f5]/95 via-[32%] to-transparent to-[58%] lg:block"/>
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/10"/>
+import { ChevronDown } from 'lucide-react'
+import HeroBackground from './HeroBackground'
 
-    <div className="relative mx-auto flex min-h-[660px] w-full max-w-[1320px] items-center px-5 py-14 sm:min-h-[680px] sm:px-6 lg:min-h-[700px] lg:px-8 xl:px-10">
-      <div className="w-full max-w-[640px]">
-        <p className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.18em] text-[#107b46]">
-          <span className="h-px w-8 bg-[#159455]"/>NAIZON · Website Development &amp; Digital Solutions
-        </p>
+export default function Hero() {
+  return (
+    <section
+      id="home"
+      className="relative flex min-h-[480px] lg:min-h-[540px] max-h-[75vh] w-full flex-col items-center justify-center overflow-hidden bg-[#060814] px-5 py-8 sm:py-10 text-white"
+    >
+      {/* Cinematic Looping Video & Interactive 60fps Canvas Animation */}
+      <HeroBackground />
 
-        <h1 className="max-w-[640px] text-[44px] font-semibold leading-[1.02] tracking-[-.045em] text-neutral-950 sm:text-[54px] lg:text-[64px] xl:text-[68px]">
-          <span className="block">Website development</span>
-          <span className="block">that grows your business.</span>
-        </h1>
-
-        <p className="mt-6 max-w-[580px] text-[17px] leading-7 text-neutral-700 sm:text-lg sm:leading-8">We design and develop responsive business websites, ecommerce experiences, custom web applications and mobile apps with straightforward pricing and ongoing support.</p>
-
-        <div className="mt-8 flex flex-col gap-3 min-[390px]:flex-row">
-          <a href="#contact" className="group inline-flex min-h-12 items-center justify-center gap-2 bg-neutral-950 px-6 text-[15px] font-semibold text-white transition-colors duration-200 hover:bg-[#107b46]">Start a Project <ArrowRight size={17} className="transition-transform duration-200 group-hover:translate-x-0.5"/></a>
-          <a href="#work" className="inline-flex min-h-12 items-center justify-center border border-neutral-600 bg-white/80 px-6 text-[15px] font-semibold text-neutral-950 transition-colors duration-200 hover:border-neutral-950 hover:bg-white">View Our Work</a>
+      {/* Main Hero Centerpiece (Exact Minimal Wipro Style in User's Naizon Brand) */}
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center">
+        
+        {/* Centerpiece Brand Typography (No image logo, pure text NAIZON) */}
+        <div className="transition-transform duration-300 hover:scale-[1.01]">
+          <h1 className="select-none text-5xl font-black tracking-[-0.03em] text-white sm:text-6xl md:text-7xl lg:text-[86px] leading-none drop-shadow-[0_12px_40px_rgba(0,0,0,0.9)]">
+            NAIZON
+          </h1>
         </div>
 
-        <p className="mt-8 border-l-2 border-[#159455] pl-3 text-sm font-medium text-neutral-700">Website plans available monthly or yearly.</p>
+        {/* Capabilities Line with Bullets (Exact Match to Wipro Reference Image) */}
+        <p className="mt-5 sm:mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[14px] font-normal tracking-[0.04em] text-neutral-300 sm:text-[16px] md:text-[18px]">
+          <span>web development</span>
+          <span className="text-[#fd5001] opacity-75">•</span>
+          <span>custom software</span>
+          <span className="text-[#fd5001] opacity-75">•</span>
+          <span>mobile applications</span>
+          <span className="text-[#fd5001] opacity-75">•</span>
+          <span>digital engineering</span>
+        </p>
       </div>
-    </div>
-  </section>
+
+      {/* Edge Lighting (Kinare Kinare Light Effect) */}
+      {/* Left Edge Light Beam */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#38bdf8]/15 via-[#38bdf8]/04 to-transparent"
+      />
+      {/* Right Edge Light Beam */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#fd5001]/16 via-[#fd5001]/04 to-transparent"
+      />
+
+      {/* Bottom Luminous Horizon Beam (Clear Separation between Home and Section Below) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-0 right-0 z-20 flex flex-col items-center justify-center overflow-visible"
+      >
+        {/* Soft Ambient Horizon Bloom */}
+        <div className="h-8 w-3/4 max-w-4xl bg-gradient-to-r from-transparent via-[#fd5001]/35 to-transparent blur-md" />
+        {/* Sharp Luminous Horizon Line */}
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/45 via-[#fd5001]/85 to-transparent" />
+        {/* Intense Central Laser Highlight */}
+        <div className="absolute h-[2px] w-2/3 max-w-2xl bg-gradient-to-r from-transparent via-[#fd5001] via-white to-transparent shadow-[0_0_16px_rgba(253,80,1,0.9)]" />
+      </div>
+
+      {/* Bottom Emerging Tab (Exact Match to Wipro's Bottom Pill/Tab) */}
+      <div className="absolute bottom-0 left-1/2 z-30 -translate-x-1/2 translate-y-2">
+        <a
+          href="#services"
+          className="group inline-flex items-center gap-1.5 rounded-t-2xl rounded-b-lg border-t border-x border-neutral-200 bg-white px-6 pt-2 pb-3.5 text-[13px] font-bold text-neutral-900 shadow-[0_-4px_24px_rgba(0,0,0,0.35)] transition-all duration-200 hover:bg-neutral-100 hover:pt-2.5 active:scale-95"
+        >
+          <span>What We Do</span>
+          <ChevronDown
+            size={15}
+            strokeWidth={2.4}
+            className="text-neutral-600 transition-transform duration-200 group-hover:translate-y-0.5"
+          />
+        </a>
+      </div>
+    </section>
+  )
 }

@@ -6,7 +6,7 @@ const root=resolve(process.cwd())
 const template=await readFile(resolve(root,'dist/index.html'),'utf8')
 const {render}=await import(pathToFileURL(resolve(root,'.ssr/entry-server.js')))
 const pages={
-  '/':['Website Development Company in Delhi & Gurgaon | NAIZON','NAIZON is a website development company serving Delhi and Gurgaon with professional web design, custom development and ecommerce solutions.'],
+  '/':['NAIZON | Web Development, AI Tools & Tech Solutions','NAIZON is a website development company serving Delhi and Gurgaon with professional web design, custom development and ecommerce solutions.'],
   '/about':['About NAIZON | Website Development & Digital Solutions','NAIZON is a website development and digital solutions company providing web design, custom development, ecommerce and mobile app services.'],
   '/website-development':['Website Development Services for Businesses | NAIZON','Custom website development services for fast, responsive and SEO-friendly business websites. Plan your website with NAIZON today.'],
   '/web-development':['Custom Web Development Services | NAIZON','Web development services for responsive websites and custom web applications, with frontend, backend and API integration expertise.'],

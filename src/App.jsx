@@ -54,5 +54,5 @@ export default function App(){
   if (path === '/delhi/website-development') return <LocationPage locationKey="delhi" path={path}/>
   if (path === '/gurgaon/website-development') return <LocationPage locationKey="gurgaon" path={path}/>
   if (path !== '/' && !sectionRoutes.has(path)) return <NotFound/>
-  return <><SEO title="Website Development Company in Delhi & Gurgaon | NAIZON" description="NAIZON is a website development company serving Delhi and Gurgaon with professional web design, custom development and ecommerce solutions." path="/" schemas={[organizationSchema,websiteSchema]}/><Navbar/><main><Hero/><Services/><Portfolio/><Pricing/><AppGamePricing/><HowItWorks/><WhyChooseUs/><About/><FAQ/><Contact/></main><Footer/><WhatsAppButton/></>
+  return <><SEO title="NAIZON | Web Development, AI Tools & Tech Solutions" description="NAIZON is a website development company serving Delhi and Gurgaon with professional web design, custom development and ecommerce solutions." path="/" schemas={[organizationSchema,websiteSchema]}/><Navbar/><main><Hero/><Services/><Portfolio/><Pricing/><AppGamePricing/><HowItWorks/><WhyChooseUs/><About/><FAQ/><Contact/></main><Footer/><WhatsAppButton/></>
 }
