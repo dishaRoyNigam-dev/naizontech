@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Check, ArrowRight } from 'lucide-react'
-import SectionHeading from './SectionHeading'
 
 const steps = [
   {
@@ -89,11 +88,15 @@ export default function HowItWorks() {
         
         {/* Left Column: Sticky Header & Progress Indicator */}
         <div className="lg:sticky lg:top-28 lg:self-start lg:py-2">
-          <SectionHeading
-            label="How we work"
-            title="A clear process from start to finish."
-            text="We keep the process understandable and the work focused on what your business actually needs."
-          />
+          <div className="max-w-3xl">
+            <span className="mb-4 block text-xs font-bold uppercase tracking-[.18em] text-[#fd5001]">
+              How we work
+            </span>
+            <h2 className="title">A clear process from start to finish.</h2>
+            <p className="copy mt-4 text-slate-600">
+              We keep the process understandable and the work focused on what your business actually needs.
+            </p>
+          </div>
 
           {/* Step Progress Stepper (Desktop) */}
           <div className="mt-10 hidden lg:block">
@@ -106,16 +109,17 @@ export default function HowItWorks() {
                   <button
                     key={step.n}
                     type="button"
+                    suppressHydrationWarning
                     onClick={() => scrollToStep(index)}
                     className="group flex w-full items-start gap-4 text-left transition-all duration-200 focus:outline-none"
                   >
-                    {/* Stepper Node */}
+                    {/* Stepper Node (Circle instead of rectangle) */}
                     <span
-                      className={`-ml-[35px] flex h-8 w-8 items-center justify-center text-xs font-bold transition-all duration-300 ${
+                      className={`-ml-[35px] flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition-all duration-300 ${
                         isActive
-                          ? 'bg-blue-700 text-white shadow-md ring-4 ring-blue-100'
+                          ? 'bg-[#fd5001] text-white shadow-md ring-4 ring-[#fd5001]/20'
                           : isPassed
-                          ? 'bg-blue-100 text-blue-700'
+                          ? 'bg-[#fd5001]/10 text-[#fd5001] border border-[#fd5001]/30'
                           : 'bg-white border-2 border-slate-300 text-slate-500 group-hover:border-slate-400'
                       }`}
                     >
@@ -125,9 +129,9 @@ export default function HowItWorks() {
                     {/* Step Title & Status */}
                     <div className="pt-0.5">
                       <p
-                        className={`text-sm font-semibold tracking-tight transition-colors ${
+                        className={`text-sm font-bold tracking-tight transition-colors ${
                           isActive
-                            ? 'text-blue-700'
+                            ? 'text-[#fd5001]'
                             : 'text-slate-800 group-hover:text-slate-950'
                         }`}
                       >
@@ -145,7 +149,7 @@ export default function HowItWorks() {
             <div className="mt-8 pt-6 border-t border-slate-200">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-800 transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#fd5001] hover:text-[#e04600] transition-colors"
               >
                 Start your project <ArrowRight size={15} />
               </a>
@@ -162,10 +166,10 @@ export default function HowItWorks() {
               <div
                 key={step.n}
                 ref={(el) => (cardRefs.current[index] = el)}
-                className={`sticky transition-all duration-300 border bg-white p-6 sm:p-8 ${
+                className={`sticky transition-all duration-300 rounded-xl sm:rounded-2xl border bg-white p-6 sm:p-8 overflow-hidden ${
                   isActive
-                    ? 'border-blue-700 shadow-[0_16px_40px_rgba(0,0,0,0.08)] ring-1 ring-blue-700/20'
-                    : 'border-slate-300 shadow-[0_4px_24px_rgba(0,0,0,0.04)]'
+                    ? 'border-[#fd5001] shadow-[0_18px_44px_rgba(253,80,1,0.12)] ring-1 ring-[#fd5001]/30'
+                    : 'border-slate-200/90 shadow-[0_6px_24px_rgba(0,0,0,0.04)]'
                 }`}
                 style={{
                   top: `calc(6.5rem + ${index * 2.5}rem)`,
@@ -173,16 +177,16 @@ export default function HowItWorks() {
                 }}
               >
                 {/* Card Header Strip (stays visible as cards stack) */}
-                <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+                <div className="flex items-center justify-between border-b border-slate-200/80 pb-3">
                   <div className="flex items-center gap-3">
-                    <span className="flex h-6 w-6 items-center justify-center bg-blue-50 text-[11px] font-bold text-blue-700 border border-blue-200/60">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fd5001]/10 text-[11px] font-bold text-[#fd5001] border border-[#fd5001]/25">
                       {step.n}
                     </span>
                     <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                       {step.badge}
                     </span>
                   </div>
-                  <span className="text-xs font-semibold text-blue-700">
+                  <span className="text-xs font-bold text-[#fd5001]">
                     Step {step.n} of 04
                   </span>
                 </div>
@@ -200,7 +204,7 @@ export default function HowItWorks() {
                   <ul className="mt-6 space-y-2.5 border-t border-slate-100 pt-5">
                     {step.highlights.map((item) => (
                       <li key={item} className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700">
-                        <Check size={16} className="shrink-0 text-blue-700" />
+                        <Check size={16} className="shrink-0 text-[#fd5001]" />
                         <span>{item}</span>
                       </li>
                     ))}

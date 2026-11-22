@@ -252,6 +252,7 @@ export default function Navbar() {
                   >
                     <button
                       type="button"
+                      suppressHydrationWarning
                       onClick={() => setActiveDropdown(isOpen ? null : item.id)}
                       aria-expanded={isOpen}
                       className={`group relative flex h-full items-center gap-1.5 px-1 text-[16px] font-bold tracking-[-0.015em] transition-colors duration-150 ${
@@ -348,6 +349,7 @@ export default function Navbar() {
               {/* Careers Link (Exact Wipro Style: 16px Bold) */}
               <button
                 type="button"
+                suppressHydrationWarning
                 onClick={() => setCareerModal(true)}
                 className="group relative flex h-full items-center px-1 text-[16px] font-bold tracking-[-0.015em] text-[#111827] transition-colors hover:text-[#fd5001]"
               >
@@ -388,6 +390,7 @@ export default function Navbar() {
           {/* Mobile Hamburger Button */}
           <button
             type="button"
+            suppressHydrationWarning
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-navigation"
@@ -414,6 +417,7 @@ export default function Navbar() {
                 <div key={item.id} className="py-3">
                   <button
                     type="button"
+                    suppressHydrationWarning
                     onClick={() => toggleMobileAccordion(item.id)}
                     className="flex w-full items-center justify-between py-2.5 text-left text-[17px] font-bold text-neutral-950"
                   >
@@ -450,6 +454,7 @@ export default function Navbar() {
             <div className="py-3">
               <button
                 type="button"
+                suppressHydrationWarning
                 onClick={() => {
                   setMobileOpen(false)
                   setCareerModal(true)
@@ -509,6 +514,7 @@ export default function Navbar() {
           <div className="relative w-full max-w-lg rounded-2xl border border-neutral-200 bg-white p-6 shadow-2xl sm:p-8">
             <button
               type="button"
+              suppressHydrationWarning
               onClick={() => setCareerModal(false)}
               className="absolute right-4 top-4 grid h-8 w-8 place-items-center rounded-full text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-900"
               aria-label="Close modal"
@@ -547,6 +553,7 @@ export default function Navbar() {
               </a>
               <button
                 type="button"
+                suppressHydrationWarning
                 onClick={() => setCareerModal(false)}
                 className="inline-flex min-h-11 items-center justify-center rounded-lg border border-neutral-300 px-5 text-sm font-bold text-neutral-700 hover:bg-neutral-50"
               >
