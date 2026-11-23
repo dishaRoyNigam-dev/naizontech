@@ -100,10 +100,11 @@ export default function HowItWorks() {
 
           {/* Step Progress Stepper (Desktop) */}
           <div className="mt-10 hidden lg:block">
-            <div className="relative border-l-2 border-slate-200 pl-6 space-y-6">
+            <div className="flex flex-col">
               {steps.map((step, index) => {
                 const isActive = activeStep === index
                 const isPassed = activeStep > index
+                const isLast = index === steps.length - 1
 
                 return (
                   <button
@@ -111,23 +112,35 @@ export default function HowItWorks() {
                     type="button"
                     suppressHydrationWarning
                     onClick={() => scrollToStep(index)}
-                    className="group flex w-full items-start gap-4 text-left transition-all duration-200 focus:outline-none"
+                    className="group flex w-full items-stretch gap-4 text-left transition-all duration-200 focus:outline-none"
                   >
-                    {/* Stepper Node (Circle instead of rectangle) */}
-                    <span
-                      className={`-ml-[35px] flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition-all duration-300 ${
-                        isActive
-                          ? 'bg-[#fd5001] text-white shadow-md ring-4 ring-[#fd5001]/20'
-                          : isPassed
-                          ? 'bg-[#fd5001]/10 text-[#fd5001] border border-[#fd5001]/30'
-                          : 'bg-white border-2 border-slate-300 text-slate-500 group-hover:border-slate-400'
-                      }`}
-                    >
-                      {step.n}
-                    </span>
+                    {/* Centered Stepper Track (Circle Node + Connecting Line) */}
+                    <div className="flex flex-col items-center">
+                      {/* Circle Node */}
+                      <span
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold transition-all duration-300 ${
+                          isActive
+                            ? 'bg-[#fd5001] text-white shadow-md ring-4 ring-[#fd5001]/20'
+                            : isPassed
+                            ? 'bg-[#fd5001]/10 text-[#fd5001] border border-[#fd5001]/30'
+                            : 'bg-white border-2 border-slate-300 text-slate-500 group-hover:border-slate-400'
+                        }`}
+                      >
+                        {step.n}
+                      </span>
+
+                      {/* Connecting Line (Only between circles, perfectly centered, starts strictly after Circle 01) */}
+                      {!isLast && (
+                        <div
+                          className={`w-[2px] flex-1 my-1 transition-colors duration-300 ${
+                            isPassed ? 'bg-[#fd5001]' : 'bg-slate-200'
+                          }`}
+                        />
+                      )}
+                    </div>
 
                     {/* Step Title & Status */}
-                    <div className="pt-0.5">
+                    <div className={`pt-1 text-left ${!isLast ? 'pb-7' : 'pb-1'}`}>
                       <p
                         className={`text-sm font-bold tracking-tight transition-colors ${
                           isActive
@@ -137,7 +150,7 @@ export default function HowItWorks() {
                       >
                         {step.t}
                       </p>
-                      <p className="text-xs text-slate-500 mt-0.5 line-clamp-1">
+                      <p className="text-xs text-slate-500 mt-1 line-clamp-1">
                         {step.d}
                       </p>
                     </div>
@@ -161,22 +174,25 @@ export default function HowItWorks() {
         <div className="relative">
           {steps.map((step, index) => {
             const isActive = activeStep === index
+            const isPrevious = index < activeStep
 
             return (
               <div
                 key={step.n}
                 ref={(el) => (cardRefs.current[index] = el)}
-                className={`sticky transition-all duration-300 rounded-xl sm:rounded-2xl border bg-white p-6 sm:p-8 overflow-hidden ${
+                className={`sticky top-[5.5rem] lg:top-[7rem] transition-all duration-300 rounded-xl sm:rounded-2xl border bg-white p-6 sm:p-8 overflow-hidden ${
                   isActive
-                    ? 'border-[#fd5001] shadow-[0_18px_44px_rgba(253,80,1,0.12)] ring-1 ring-[#fd5001]/30'
-                    : 'border-slate-200/90 shadow-[0_6px_24px_rgba(0,0,0,0.04)]'
+                    ? 'border-[#fd5001] shadow-[0_18px_44px_rgba(253,80,1,0.12)] ring-1 ring-[#fd5001]/30 opacity-100'
+                    : isPrevious
+                    ? 'border-transparent shadow-none opacity-0 pointer-events-none'
+                    : 'border-slate-200/90 shadow-[0_6px_24px_rgba(0,0,0,0.04)] opacity-100'
                 }`}
                 style={{
-                  top: `calc(6.5rem + ${index * 2.5}rem)`,
-                  marginBottom: index < steps.length - 1 ? '7rem' : '0rem',
+                  zIndex: (index + 1) * 10,
+                  marginBottom: index < steps.length - 1 ? '9rem' : '0rem',
                 }}
               >
-                {/* Card Header Strip (stays visible as cards stack) */}
+                {/* Card Header Strip */}
                 <div className="flex items-center justify-between border-b border-slate-200/80 pb-3">
                   <div className="flex items-center gap-3">
                     <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fd5001]/10 text-[11px] font-bold text-[#fd5001] border border-[#fd5001]/25">
