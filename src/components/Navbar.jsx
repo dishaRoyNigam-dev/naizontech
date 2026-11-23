@@ -15,7 +15,7 @@ import {
   Users,
   Briefcase,
   ExternalLink,
-  MessageCircle,
+  UserPlus,
 } from 'lucide-react'
 
 const navigationData = [
@@ -24,9 +24,9 @@ const navigationData = [
     id: 'what-we-do',
     featured: {
       tag: 'Engineering Excellence',
-      heading: 'End-to-End Digital & Web Solutions',
+      heading: 'Full-Cycle Software & Digital Solutions',
       description:
-        'Transforming ideas into resilient digital systems — custom web applications, responsive business websites, and scalable architectures.',
+        'Transforming ideas into resilient digital systems — custom SaaS platforms, web applications, mobile apps, Windows desktop software, and interactive web games.',
       link: '/#services',
       linkText: 'Explore all capabilities',
     },
@@ -35,34 +35,40 @@ const navigationData = [
         title: 'Core Capabilities',
         items: [
           {
-            label: 'Website Development',
-            href: '/website-development',
-            description: 'Fast, secure, responsive websites built for business growth.',
-            icon: Globe,
-          },
-          {
-            label: 'Custom Web Applications',
+            label: 'Web & SaaS Applications',
             href: '/web-development',
-            description: 'Scalable web apps, portals, SaaS platforms & API integrations.',
+            description: 'Scalable web apps, client SaaS platforms & API integrations.',
             icon: Code2,
           },
           {
-            label: 'Website Design & UI/UX',
-            href: '/website-design',
-            description: 'High-converting user interfaces, design systems & prototypes.',
-            icon: Layers,
-          },
-          {
-            label: 'Ecommerce Development',
-            href: '/ecommerce-development',
-            description: 'Custom online stores with seamless catalogs and checkouts.',
-            icon: Sparkles,
+            label: 'Website & Webpage Development',
+            href: '/website-development',
+            description: 'Fast, secure, responsive websites built for business growth.',
+            icon: Globe,
           },
           {
             label: 'Mobile App Development',
             href: '/mobile-app-development',
             description: 'Cross-platform iOS and Android apps with robust backends.',
             icon: Smartphone,
+          },
+          {
+            label: 'Windows & Desktop Software',
+            href: '/#services',
+            description: 'High-performance desktop apps & automated business tooling.',
+            icon: Layers,
+          },
+          {
+            label: 'Web Games & Interactive',
+            href: '/#services',
+            description: 'Engaging HTML5 2D games, physics & interactive experiences.',
+            icon: Sparkles,
+          },
+          {
+            label: 'Ecommerce & UI/UX Design',
+            href: '/ecommerce-development',
+            description: 'High-converting digital storefronts & interface design systems.',
+            icon: Sparkles,
           },
         ],
       },
@@ -111,49 +117,6 @@ const navigationData = [
       },
     ],
   },
-  {
-    title: 'About Naizon',
-    id: 'about-naizon',
-    featured: {
-      tag: 'Who We Are',
-      heading: 'A Focused Digital Technology Partner',
-      description:
-        'Delivering tailored digital systems, custom applications, and ongoing technical support for ambitious companies worldwide.',
-      link: '/about',
-      linkText: 'Discover our journey',
-    },
-    sections: [
-      {
-        title: 'Company',
-        items: [
-          {
-            label: 'About Our Company',
-            href: '/about',
-            description: 'Our mission, technology expertise, and core values.',
-            icon: Users,
-          },
-          {
-            label: 'Why Choose Naizon',
-            href: '/#why-choose-us',
-            description: 'Engineering rigor, transparent pricing, and zero tech lock-in.',
-            icon: Sparkles,
-          },
-          {
-            label: 'How We Deliver',
-            href: '/#how-it-works',
-            description: 'Our 4-step agile process from discovery to deployment.',
-            icon: Code2,
-          },
-          {
-            label: 'News & Insights',
-            href: '/#news-insights',
-            description: 'Explore latest publications, industry research, and tech insights.',
-            icon: Layers,
-          },
-        ],
-      },
-    ],
-  },
 ]
 
 export default function Navbar() {
@@ -161,6 +124,9 @@ export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null)
   const [mobileExpanded, setMobileExpanded] = useState(null)
   const [careerModal, setCareerModal] = useState(false)
+  const [signUpModal, setSignUpModal] = useState(false)
+  const [signUpSubmitted, setSignUpSubmitted] = useState(false)
+  const [signUpData, setSignUpData] = useState({ name: '', email: '', projectType: 'SaaS Platform' })
   const timeoutRef = useRef(null)
   const navRef = useRef(null)
 
@@ -345,6 +311,15 @@ export default function Navbar() {
                 )
               })}
 
+              {/* About Naizon Direct Link (Single Dedicated Page) */}
+              <a
+                href="/about"
+                className="group relative flex h-full items-center px-1 text-[16px] font-bold tracking-[-0.015em] text-[#111827] transition-colors hover:text-[#fd5001]"
+              >
+                <span>About Naizon</span>
+                <span className="absolute inset-x-0 bottom-0 h-[3.5px] scale-x-0 bg-[#fd5001] transition-transform duration-200 group-hover:scale-x-100" />
+              </a>
+
               {/* Careers Link (Exact Wipro Style: 16px Bold) */}
               <button
                 type="button"
@@ -357,19 +332,21 @@ export default function Navbar() {
             </nav>
           </div>
 
-          {/* Right Action Buttons: PRESERVED EXACTLY AS SPECIFIED */}
+          {/* Right Action Buttons */}
           <div className="hidden items-center gap-3.5 lg:flex">
-            {/* [Talk to Tech Team] */}
-            <a
-              href="https://wa.me/918574774647"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Direct WhatsApp Contact"
+            {/* [Sign Up] */}
+            <button
+              type="button"
+              onClick={() => {
+                setSignUpSubmitted(false)
+                setSignUpModal(true)
+              }}
+              aria-label="Client Sign Up"
               className="inline-flex h-11 items-center gap-2 rounded-lg border border-neutral-300 px-4 text-[14px] font-bold text-neutral-800 transition-colors hover:border-[#fd5001]/50 hover:bg-[#fd5001]/5 hover:text-[#fd5001]"
             >
-              <MessageCircle size={17} className="text-[#25D366]" />
-              <span>Talk to Tech Team</span>
-            </a>
+              <UserPlus size={17} className="text-[#fd5001]" />
+              <span>Sign Up</span>
+            </button>
 
             {/* [Contact Us] */}
             <a
@@ -446,6 +423,18 @@ export default function Navbar() {
               )
             })}
 
+            {/* About Naizon Direct Link on Mobile */}
+            <div className="py-3">
+              <a
+                href="/about"
+                onClick={() => setMobileOpen(false)}
+                className="flex w-full items-center justify-between py-2.5 text-left text-[17px] font-bold text-neutral-950 transition-colors hover:text-[#fd5001]"
+              >
+                <span>About Naizon</span>
+                <ArrowRight size={18} className="text-neutral-400" />
+              </a>
+            </div>
+
             {/* Careers on Mobile */}
             <div className="py-3">
               <button
@@ -476,16 +465,18 @@ export default function Navbar() {
 
           {/* Mobile Action Buttons */}
           <div className="mt-8 space-y-3 pt-4">
-            <a
-              href="https://wa.me/918574774647"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileOpen(false)}
+            <button
+              type="button"
+              onClick={() => {
+                setMobileOpen(false)
+                setSignUpSubmitted(false)
+                setSignUpModal(true)
+              }}
               className="flex min-h-12 w-full items-center justify-center gap-2 rounded-lg border border-neutral-300 px-5 text-[14.5px] font-bold text-neutral-800 transition hover:bg-neutral-50"
             >
-              <MessageCircle size={18} className="text-[#25D366]" />
-              <span>Talk to Tech Team</span>
-            </a>
+              <UserPlus size={18} className="text-[#fd5001]" />
+              <span>Sign Up</span>
+            </button>
 
             <a
               href="/#contact"
@@ -502,6 +493,116 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* Sign Up Modal (Client Project & Engineering Access) */}
+      {signUpModal && (
+        <div className="fixed inset-0 z-50 grid place-items-center bg-black/60 p-4 backdrop-blur-sm animate-in fade-in duration-150">
+          <div className="relative w-full max-w-md rounded-2xl border border-neutral-200 bg-white p-6 shadow-2xl sm:p-8">
+            <button
+              type="button"
+              onClick={() => setSignUpModal(false)}
+              className="absolute right-4 top-4 grid h-8 w-8 place-items-center rounded-full text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-900"
+              aria-label="Close modal"
+            >
+              <X size={18} />
+            </button>
+
+            <span className="inline-block rounded-full bg-[#fd5001]/10 px-3.5 py-1 text-xs font-extrabold uppercase tracking-wider text-[#fd5001]">
+              Client Access
+            </span>
+
+            <h3 className="mt-3 text-2xl font-bold tracking-tight text-neutral-950">
+              Create Client Account
+            </h3>
+
+            <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+              Sign up to track project sprint milestones, collaborate with your engineering team, and access architectural deliverables.
+            </p>
+
+            {signUpSubmitted ? (
+              <div className="mt-6 rounded-xl border border-emerald-200 bg-emerald-50 p-5 text-center">
+                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500 text-white font-bold mb-2">
+                  ✓
+                </div>
+                <h4 className="text-base font-bold text-emerald-950">Account Request Received!</h4>
+                <p className="mt-1 text-xs text-emerald-800">
+                  Our engineering leads will provision your staging environment and email confirmation to <strong>{signUpData.email}</strong> shortly.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSignUpModal(false)}
+                  className="mt-4 inline-flex min-h-10 items-center justify-center rounded-lg bg-emerald-600 px-5 text-xs font-bold text-white hover:bg-emerald-700"
+                >
+                  Done
+                </button>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  if (signUpData.name && signUpData.email) {
+                    setSignUpSubmitted(true)
+                  }
+                }}
+                className="mt-5 space-y-3.5"
+              >
+                <div>
+                  <label className="block text-xs font-bold text-neutral-700 mb-1">Full Name</label>
+                  <input
+                    type="text"
+                    required
+                    value={signUpData.name}
+                    onChange={(e) => setSignUpData({ ...signUpData, name: e.target.value })}
+                    placeholder="e.g. Alex Morgan"
+                    className="w-full rounded-lg border border-neutral-300 px-3.5 py-2.5 text-sm text-neutral-900 outline-none transition focus:border-[#fd5001] focus:ring-1 focus:ring-[#fd5001]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-neutral-700 mb-1">Work Email</label>
+                  <input
+                    type="email"
+                    required
+                    value={signUpData.email}
+                    onChange={(e) => setSignUpData({ ...signUpData, email: e.target.value })}
+                    placeholder="alex@company.com"
+                    className="w-full rounded-lg border border-neutral-300 px-3.5 py-2.5 text-sm text-neutral-900 outline-none transition focus:border-[#fd5001] focus:ring-1 focus:ring-[#fd5001]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-neutral-700 mb-1">Primary Interest</label>
+                  <select
+                    value={signUpData.projectType}
+                    onChange={(e) => setSignUpData({ ...signUpData, projectType: e.target.value })}
+                    className="w-full rounded-lg border border-neutral-300 px-3.5 py-2.5 text-sm text-neutral-900 outline-none transition focus:border-[#fd5001] focus:ring-1 focus:ring-[#fd5001] bg-white"
+                  >
+                    <option value="SaaS Platform">Custom SaaS Platform</option>
+                    <option value="Web Application">Modern Web Application</option>
+                    <option value="Windows Desktop">Windows Desktop Software</option>
+                    <option value="Mobile App">Mobile Application (iOS/Android)</option>
+                    <option value="Interactive Web Game">Interactive Web Game & 2D</option>
+                  </select>
+                </div>
+
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#fd5001] px-5 text-sm font-bold text-white shadow-sm transition hover:bg-[#e04600] active:scale-[0.98]"
+                  >
+                    <UserPlus size={16} />
+                    <span>Create Client Account</span>
+                  </button>
+                </div>
+
+                <p className="text-center text-[11px] text-neutral-500">
+                  By signing up, you agree to our terms of technical service and NDAs.
+                </p>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Careers Modal (Corporate IT Style in Brand Orange) */}
       {careerModal && (

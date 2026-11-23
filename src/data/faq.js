@@ -1,12 +1,11 @@
-export const faqs=[
-['What is included in a website plan?','Each plan includes the listed pages and services, such as hosting, SSL, support and selected maintenance.'],
-['Can I pay monthly?','Yes. Eligible website plans can be paid and renewed monthly.'],
-['Is hosting included?','Yes, hosting is included in the website plans shown.'],
-['Is the domain included?','A standard domain is included where listed. Premium names or special extensions may cost extra.'],
-['Can I request website changes?','Yes. Content changes are handled according to your plan. New functionality may need a separate quote.'],
-['Do you develop Android apps?','Yes. We build Android and cross-platform applications based on the project requirements.'],
-['Do you develop games?','Yes. We develop 2D, puzzle and casual mobile games.'],
-['How are apps and games priced?','We quote them individually based on screens, features, backend work, art and technical complexity.'],
-['What happens if I cancel?','The website service ends according to the notice and renewal terms in your agreement.'],
-['Do I receive source code?','Source-code access and ownership are stated clearly in the selected plan or custom-project agreement.']
+export const faqs = [
+  ['What software development services does NAIZON provide?', 'NAIZON provides full-cycle software development services, including modern business websites and webpages, custom web applications, multi-tenant SaaS platforms, native and cross-platform mobile apps (Android & iOS), Windows desktop applications, and interactive HTML5 web games.'],
+  ['Can NAIZON develop custom SaaS applications for clients?', 'Yes. We build complete SaaS platforms for clients—including authentication, multi-tenancy, subscription billing, customer portals, admin dashboards, real-time analytics, and scalable cloud API backends.'],
+  ['Do you build Windows and desktop applications?', 'Yes. We develop high-performance Windows desktop applications and cross-platform utilities for business automation, local data processing, system integrations, and internal tooling.'],
+  ['Do you develop mobile applications for iOS and Android?', 'Yes. We build responsive cross-platform and native mobile apps using modern frameworks like Flutter and React Native, connected to reliable cloud databases and APIs.'],
+  ['Can you build web-based games and interactive experiences?', 'Yes. We build interactive 2D browser games, WebGL experiences, and casual mobile gameplay with smooth 60FPS physics, engaging animations, and cross-device performance.'],
+  ['Are your websites and web applications SEO-optimized?', 'Yes. Every web application and website is built with clean semantic code, sub-second load times, structured Schema.org metadata, and technical Core Web Vitals optimization to rank effectively on search engines.'],
+  ['Do clients own the source code and IP?', 'Yes. Complete source code access, intellectual property rights, and deployment documentation are handed over to you upon project completion as agreed in the contract.'],
+  ['How is software pricing and timeline determined?', 'Pricing and timelines are scoped transparently based on your feature set, target platforms (Web, Mobile, Windows, SaaS), backend complexity, and integrations. We provide a clear estimate following an initial discovery discussion.'],
+  ['Do you provide post-launch maintenance and updates?', 'Yes. We offer ongoing maintenance, cloud server monitoring, bug fixes, security patches, and feature updates so your software continues running reliably.']
 ]

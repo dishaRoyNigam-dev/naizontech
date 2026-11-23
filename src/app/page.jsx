@@ -14,9 +14,9 @@ import WhatsAppButton from '../components/WhatsAppButton'
 import { organizationSchema, websiteSchema } from '../data/schemas'
 
 export const metadata = {
-  title: 'NAIZON | Web Development, AI Tools & Tech Solutions',
+  title: 'NAIZON | Custom Software, SaaS, Web, Mobile & Desktop Development',
   description:
-    'NAIZON is a website development company serving Delhi and Gurgaon with professional web design, custom development and ecommerce solutions.',
+    'NAIZON is a full-cycle software development company. We build custom web applications, client SaaS platforms, mobile apps, Windows desktop software, webpages, and interactive web games.',
   alternates: {
     canonical: 'https://naizon.in',
   },

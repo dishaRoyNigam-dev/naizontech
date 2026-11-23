@@ -5,11 +5,11 @@ export const organizationSchema = {
   '@type': 'Organization',
   '@id': `${SITE_URL}/#organization`,
   name: 'NAIZON',
-  alternateName: 'NAIZON — Website Development & Digital Solutions',
+  alternateName: 'NAIZON — Custom Software Development, SaaS & Digital Solutions',
   url: SITE_URL,
   logo: `${SITE_URL}/logo/logo.svg`,
   description:
-    'Website development and digital solutions company creating business websites, ecommerce experiences, web applications and mobile apps.',
+    'Full-cycle software development company building custom web applications, client SaaS platforms, mobile apps (iOS & Android), Windows desktop applications, webpages, and interactive web games.',
 }
 
 export const websiteSchema = {
@@ -17,7 +17,7 @@ export const websiteSchema = {
   '@type': 'WebSite',
   '@id': `${SITE_URL}/#website`,
   url: SITE_URL,
-  name: 'NAIZON — Website Development & Digital Solutions',
+  name: 'NAIZON — Custom Software Development & SaaS Solutions',
   publisher: { '@id': `${SITE_URL}/#organization` },
   inLanguage: 'en-IN',
 }
