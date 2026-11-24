@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 
 const initial = { name: '', email: '', phone: '', service: 'Website', budget: 'Basic', details: '' }
-const fieldClass = (error) => `mt-2 w-full border bg-white px-3.5 py-2.5 text-[15px] text-slate-900 outline-none transition focus:border-blue-700 focus:ring-1 focus:ring-blue-700 ${error ? 'border-red-500' : 'border-slate-300'}`
+const fieldClass = (error) => `mt-2 w-full rounded-lg border bg-white px-3.5 py-2.5 text-[15px] text-slate-900 outline-none transition focus:border-[#fd5001] focus:ring-1 focus:ring-[#fd5001] ${error ? 'border-red-500' : 'border-slate-300'}`
 
 export default function Contact() {
   const [form, setForm] = useState(initial)

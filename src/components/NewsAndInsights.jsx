@@ -5,36 +5,36 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 
 const insightsData = [
   {
-    title: 'Newsroom',
+    title: 'Product Updates',
     description:
-      'Stay up-to-date on all press announcements, product updates, and platform milestones.',
+      'Launches, production builds, release changelogs, and software platform milestones.',
     image: '/images/insights/spotlight-01.png',
-    imageAlt: 'Microphone on a stand in auditorium for press announcements',
+    imageAlt: 'NAIZON product release pipeline and automated deployment builds',
     href: '/guides',
   },
   {
     title: 'Insights',
     description:
-      'Perspectives that expand your technical knowledge and make your digital systems future ready.',
+      'Practical engineering notes, architectural decisions, and modern system design perspectives.',
     image: '/images/insights/spotlight-02.png',
-    imageAlt: 'Two business executives smiling and shaking hands',
+    imageAlt: 'NAIZON system design topology and decoupled cloud architecture',
     href: '/guides',
   },
   {
-    title: 'Analyst Recognitions',
+    title: 'Architecture & Benchmarks',
     description:
-      'Recognised for engineering excellence across web architectures, mobile applications, and digital platforms.',
-    image: '/images/insights/spotlight-03.png',
-    imageAlt: 'Executive in formal attire near screen with data and bar charts',
-    href: '/about',
+      'Core Web Vitals benchmarks, high-load stress testing, and real production system performance patterns.',
+    image: '/images/insights/spotlight-04.png',
+    imageAlt: 'Core Web Vitals 100/100 performance audit and high-load stress testing',
+    href: '/guides/seo-friendly-websites',
   },
   {
-    title: 'Global Studies',
+    title: 'Open Builds & Experiments',
     description:
-      'In-depth research on Core Web Vitals, enterprise cloud scaling, microservice APIs, and modern web architectures.',
-    image: '/images/insights/spotlight-04.png',
-    imageAlt: 'Executive looking at a digital holographic world map display',
-    href: '/guides/seo-friendly-websites',
+      'Interactive prototypes, developer utilities, WebGL shaders, and technical explorations from our lab.',
+    image: '/images/insights/spotlight-03.png',
+    imageAlt: 'Experimental WebGL prototypes, developer tools, and technical explorations',
+    href: '/guides/website-development-guide',
   },
 ]
 

@@ -24,13 +24,13 @@ export default function Hero() {
 
         {/* Capabilities Line with Bullets (Exact Match to Wipro Reference Image) */}
         <p className="mt-5 sm:mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[14px] font-normal tracking-[0.04em] text-neutral-300 sm:text-[16px] md:text-[18px]">
-          <span>web development</span>
+          <span>web &amp; saas apps</span>
           <span className="text-[#fd5001] opacity-75">•</span>
-          <span>custom software</span>
+          <span>mobile &amp; windows software</span>
           <span className="text-[#fd5001] opacity-75">•</span>
-          <span>mobile applications</span>
+          <span>web games</span>
           <span className="text-[#fd5001] opacity-75">•</span>
-          <span>digital engineering</span>
+          <span>custom software solutions</span>
         </p>
       </div>
 

@@ -9,11 +9,11 @@ export const viewport = {
 export const metadata = {
   metadataBase: new URL('https://naizon.in'),
   title: {
-    default: 'NAIZON | Web Development, AI Tools & Tech Solutions',
+    default: 'NAIZON | Custom Software, SaaS, Web, Mobile & Desktop Development',
     template: '%s',
   },
   description:
-    'NAIZON is a website development company serving Delhi and Gurgaon with professional web design, custom development and ecommerce solutions.',
+    'NAIZON is a full-cycle software development company building custom web applications, client SaaS platforms, mobile apps (iOS & Android), Windows desktop software, webpages, and interactive web games.',
   icons: {
     icon: [
       { url: '/favicon/favicon.svg', type: 'image/svg+xml' },
@@ -26,17 +26,17 @@ export const metadata = {
     type: 'website',
     locale: 'en_IN',
     url: 'https://naizon.in',
-    siteName: 'NAIZON — Website Development & Digital Solutions',
-    title: 'NAIZON | Web Development, AI Tools & Tech Solutions',
+    siteName: 'NAIZON — Custom Software Development & Digital Solutions',
+    title: 'NAIZON | Custom Software, SaaS, Web, Mobile & Desktop Development',
     description:
-      'Professional website design, custom web development and ecommerce solutions for growing businesses.',
+      'Full-cycle software development company engineering custom web applications, client SaaS platforms, mobile apps, Windows desktop software, and interactive web games.',
     images: [{ url: '/images/hero.jpg' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NAIZON | Web Development, AI Tools & Tech Solutions',
+    title: 'NAIZON | Custom Software, SaaS, Web, Mobile & Desktop Development',
     description:
-      'Professional website design, custom web development and ecommerce solutions for growing businesses.',
+      'Full-cycle software development company engineering custom web applications, client SaaS platforms, mobile apps, Windows desktop software, and interactive web games.',
     images: ['/images/hero.jpg'],
   },
   robots: {

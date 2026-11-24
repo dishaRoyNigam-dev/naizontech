@@ -4,24 +4,24 @@ import { ArrowRight } from 'lucide-react'
 
 const serviceCards = [
   {
-    title: 'Web Development',
-    description: 'Build responsive business websites.\nDrive customer conversions.',
+    title: 'Web & SaaS Applications',
+    description: 'Build fast business websites, custom web apps & scalable client SaaS platforms.',
     image: '/images/work-web.png',
-    imageAlt: 'NAIZON Web Development and Cloud Platforms',
-    href: '/website-development',
+    imageAlt: 'NAIZON Web and SaaS Application Development',
+    href: '/web-development',
   },
   {
-    title: 'Mobile Applications',
-    description: 'Experience native iOS & Android apps.\nTransform your business workflow.',
+    title: 'Mobile & Windows Software',
+    description: 'Experience native iOS, Android & Windows desktop apps built for performance.',
     image: '/images/work-mobile.png',
-    imageAlt: 'NAIZON Native Mobile Application Development',
+    imageAlt: 'NAIZON Native Mobile and Windows Software Development',
     href: '/mobile-app-development',
   },
   {
-    title: 'Products and Platforms',
-    description: 'Explore our interactive games & tools.\nAccelerate digital performance.',
+    title: 'Web Games & Digital Products',
+    description: 'Engage users with interactive browser games, WebGL apps & custom software.',
     image: '/images/work-game.png',
-    imageAlt: 'NAIZON Interactive Games and WebGL Platforms',
+    imageAlt: 'NAIZON Interactive Web Games and Custom Software Solutions',
     href: '/#contact',
   },
 ]
@@ -35,7 +35,7 @@ export default function Services() {
       <div className="mx-auto w-full max-w-[1320px]">
         {/* Clean, uncluttered single heading matching user's reference image */}
         <h2 className="mb-8 text-2xl font-normal tracking-tight text-white sm:text-3xl lg:text-[32px]">
-          Cutting edge solutions to power up your business
+          Full-cycle software solutions to power up your business
         </h2>
 
         {/* 3-Column Card Grid (Exact Match to User's Uploaded Wipro Screenshot) */}

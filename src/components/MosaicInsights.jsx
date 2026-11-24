@@ -46,11 +46,11 @@ const mosaicItems = [
     type: 'card',
     bg: 'bg-[#0284c7]', // Cerulean Blue
     hoverBg: 'hover:bg-[#0369a1]',
-    category: 'CUSTOM WEB ENGINEERING',
-    title: 'Custom Web Applications: Moving Beyond Off-the-Shelf Templates',
-    description: 'Tailored digital solutions engineered around unique business workflows rather than rigid templates.',
+    category: 'CUSTOM WEB & SAAS ENGINEERING',
+    title: 'Custom Web Apps & Client SaaS: Moving Beyond Generic Templates',
+    description: 'Tailored digital solutions, client SaaS portals & multi-tenant architectures engineered around business workflows.',
     linkText: 'READ MORE',
-    href: '/website-development',
+    href: '/web-development',
   },
   {
     type: 'image',
@@ -64,9 +64,9 @@ const mosaicItems = [
     type: 'card',
     bg: 'bg-[#1e40af]', // Royal Blue
     hoverBg: 'hover:bg-[#1e3a8a]',
-    category: 'MOBILE ARCHITECTURE',
-    title: 'Native vs Cross-Platform: How We Build Flutter & React Native Apps',
-    description: 'Balancing development velocity with 60FPS fluid touch responsiveness across iOS and Android.',
+    category: 'MOBILE & DESKTOP ARCHITECTURE',
+    title: 'Mobile & Windows Software: Building Native Workflows Across Platforms',
+    description: 'Balancing development velocity with 60FPS fluid touch responsiveness across iOS, Android, and Windows.',
     linkText: 'READ MORE',
     href: '/mobile-app-development',
   },
@@ -146,7 +146,7 @@ export default function MosaicInsights() {
             </h2>
           </div>
           <p className="max-w-md text-[13.5px] leading-relaxed text-neutral-400 sm:text-[14.5px]">
-            Explore how we build custom web architectures, scalable mobile systems, WebGL experiences, and enterprise software that drives growth.
+            Explore how we build custom web applications, client SaaS platforms, mobile &amp; Windows software, and interactive web games that drive growth.
           </p>
         </div>
       </div>
